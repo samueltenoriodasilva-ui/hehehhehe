@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Verificação Divertida</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  .container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>O que você é?</h2>
+  <input type="text" id="resposta" placeholder="Digite aqui...">
+  <br>
+  <button onclick="verificar()">Enviar</button>
+  <p id="mensagem" style="margin-top:15px; font-weight:bold;"></p>
+</div>
+
+<script>
+function verificar() {
+  const resposta = document.getElementById('resposta').value.trim().toLowerCase();
+  const mensagem = document.getElementById('mensagem');
+
+  if (resposta === "putinha") {
+    mensagem.style.color = "green";
+    mensagem.textContent = "🎉 Liberado! Você escreveu corretamente!";
+  } else {
+    mensagem.style.color = "red";
+    mensagem.textContent = "❌ Errado! Tente novamente.";
+  }
+}
+</script>
+
+</body>
+</html>
