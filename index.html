@@ -25,6 +25,7 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     margin-top: 10px;
+    text-transform: uppercase;
   }
   button {
     padding: 10px 20px;
@@ -53,12 +54,15 @@
 
 <script>
 function verificar() {
-  const resposta = document.getElementById('resposta').value.trim().toLowerCase();
+  const input = document.getElementById('resposta');
+  const resposta = input.value.trim().toLowerCase();
   const mensagem = document.getElementById('mensagem');
 
   if (resposta === "putinha") {
     mensagem.style.color = "green";
     mensagem.textContent = "🎉 Liberado! Você escreveu corretamente!";
+    input.value = "NÃO DEMOROU MUITO, NE SUA PUTINHA";
+    input.disabled = true; // Desativa o campo para não alterar mais
   } else {
     mensagem.style.color = "red";
     mensagem.textContent = "❌ Errado! Tente novamente.";
